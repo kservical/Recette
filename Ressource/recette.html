@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recette</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" src="css/bulma.css">
+    <link rel="stylesheet" src="css/fontawesome.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" src="css/style.css">
+
+  </head>
+  <body>
+    <header>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="Main Navigation">
+            <div class="navbar-brand">
+                    <a href="" class="nav-item"><img href="https://www.google.fr/search?q=arte+negra&client=ubuntu&hs=lWy&channel=fs&dcr=0&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJtOna7-3YAhWM7BQKHZEIAxIQ_AUICigB&biw=1295&bih=668#imgrc=KLkm7ZaMsZUoTM:"></a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="" class="nav-item">Home</a>
+                    <a href="" class="nav-item">List</a>
+                    <a href="" class="nav-item">Manage</a>
+                </div>
+                <div class="navbar-end">
+                    <a href="" class="nav-item">Admin</a>
+                </div>
+            </div>
+        </nav>  
+        
+    </header>
+    <section class="hero is-primary">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">
+                  Recette de cuisine
+                </h1>
+                <h2 class="subtitle">
+                  Bon appetit !!!
+                </h2>
+              </div>
+            </div>
+    </section>
+    <section class="hero is-light">
+            
+            <div class="container  has-text-centered">
+                
+                <h2 class="subtitle">
+                    Trouver une recette
+                </h2>
+            </div>
+            <div class="field has-addons has-addons-centered">
+                <div class="control ">
+                    <input class="input" type="text" placeholder="cherche ta recette">
+                </div>
+                <div class="control">
+                    <button class="button fa fa-search is medium"
+                </div>
+            </div>
+    </section>
+    <section>
+
+        <div  class="has-text-centered">
+                    <h1>Titre de la recette</h1>
+                        
+                    <img src="/home/kevin/Bureau/projet_web/plat.jpg" alt="">
+        </div>
+
+        <div class="columns">
+              <div class="column is-one-third">
+                Temps : 40min
+              </div>
+              <div class="column is-one-third">
+                <p> Nombre de personne : 
+                    <input id="number" type="number" value="1">
+                </p>
+              </div>
+              <div class="column is-one-third">
+                A voir
+              </div>
+
+
+        </div>
+        <script>
+                    function displayVals() {
+                        var singleValues = $( "#number" ).val();
+                        $( ".lol" ).html( "<b>  </b> " + singleValues );
+                        var proportionnel=singleValues*20;
+                        $( "#proportionnel" ).html( proportionnel );
+                    }
+ 
+                    $("input" ).change( displayVals );
+                    displayVals();
+
+        </script>
+
+
+        <div  class="columns has-text-centered field has-addons has-addons-centered">
+            <div  class="column is-one-third is-3">
+                    
+                <h2>Composition pour :<span class="lol" ></span> personne(s)</h2> 
+                <ul class="has-text-left">
+                  <li><em id="proportionnel"></em> g de Farines</li>
+                  <li><em "></em>oeuf :</li>
+                  <li><em "></em>Lait :</li>
+                  <li><em "></em>Levure :</li>
+                  
+                </ul>                 
+            </div>
+            <div  class="column has-text-left">
+
+                <h2 >Préparation </h2>  
+                <p >Etape 1 </p>
+
+            </div>
+
+        </div>
+    </section>   
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                <strong>Copyright</strong> by <a href="https://servical-kevin.fr">SERVICAL Kévin</a>
+                
+                </p>
+            </div>
+        </div>
+    </footer>
+  </body
+</html>

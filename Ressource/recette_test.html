@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recette</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" src="css/bulma.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" src="css/style.css">
+
+  </head>
+  <body>
+    <header>
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="Main Navigation">
+            <div class="navbar-brand">
+                    <a href="" class="nav-item"><img href="https://www.google.fr/search?q=arte+negra&client=ubuntu&hs=lWy&channel=fs&dcr=0&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjJtOna7-3YAhWM7BQKHZEIAxIQ_AUICigB&biw=1295&bih=668#imgrc=KLkm7ZaMsZUoTM:"></a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="" class="nav-item">Home</a>
+                    <a href="" class="nav-item">List</a>
+                    <a href="" class="nav-item">Manage</a>
+                </div>
+                <div class="navbar-end">
+                    <a href="" class="nav-item">Admin</a>
+                </div>
+            </div>
+        </nav>  
+        
+    </header>
+    <section>
+
+    </section>
+    <section class="hero is-primary">
+            <div class="hero-body">
+              <div class="container">
+                <h1 class="title">
+                  Recette de cuisine
+                </h1>
+                <h2 class="subtitle">
+                  Bon appetit !!!
+                </h2>
+              </div>
+            </div>
+    </section>
+    <section class="hero is-light">
+            
+            <div class="container  has-text-centered">
+                
+                <h2 class="subtitle">
+                    Trouver une recette
+                </h2>
+            </div>
+            <div class="field has-addons has-addons-centered">
+                <div class="control ">
+                    <input class="input" type="text" placeholder="cherche ta recette">
+                </div>
+                <div class="control">
+                    <button class="button fa fa-search is medium"
+                </div>
+            </div>
+    </section>
+    <section>
+        <script>
+        var init_dosage=[];
+        $(document).ready(function(){
+            $(".liste").each(function(index,element){
+                init_dosage[index]= $(this).text();
+                console.log( $( this ).text());
+                console.log(init_dosage);
+                        
+                    });
+            $(".add").click(function(){
+                var valeur=$(".nombre").text();
+                var nb_personne = parseFloat(valeur)+1;
+                $(".nombre").text(nb_personne);
+                $(".liste").each(function(index,element){
+                    var dosage =nb_personne*init_dosage[index];
+                    $( this ).text(dosage);
+                    console.log( $( this ).text());
+                        
+                });
+                
+            });
+
+            $(".remove").click(function(){
+                var valeur=$(".nombre").text();
+                if (valeur>=2) {
+                    var nb_personne = parseFloat(valeur)-1;
+                    $(".nombre").text(nb_personne);
+                    $(".liste").each(function(index,element){
+                        var dosage =nb_personne*init_dosage[index];
+                        $( this ).text(dosage);
+                        console.log( $( this ).text());
+                        
+                    });
+
+                }
+                else {
+                    $(".nombre").text("1");
+                }
+            });
+        });
+        </script>
+        <div  class="has-text-centered">
+                    <h1>Titre de la recette</h1>
+                        
+                    <img src="/home/kevin/Bureau/projet_web/plat.jpg" alt="">
+        </div>
+
+        <div class="columns">
+          <div class="column title is-4">
+                            
+                <p> Nombre de personne :  
+                    <button class="button is-small remove" type="submit" value="-"></button>
+                    <span class="nombre">1</span> 
+                    <button class="button is-small add" type="submit" value="+" ></button>
+                </p>
+          </div>
+          <div class="column title is-4">
+            Temps de prépation : 40 min
+          </div>
+          <div class="column title is-4">
+            Temps de cuisson : 30 min
+          </div>
+        </div>        
+       
+        <div  class="columns has-text-centered field has-addons has-addons-centered">
+            <div  class="column is-one-third is-3">
+                <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="/home/kevin/Bureau/projet_web/plat.jpg" alt="">
+                            </figure>
+                        </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                  <img src="/home/kevin/Bureau/projet_web/couvert.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                               
+                                <p class="title is-4">toto</p>
+                                <p class="subtitle is-6">tata</p>
+                            </div>
+                        </div>
+
+                        <div class="content">
+                            <ul class="has-text-left">
+                              <li><em class="liste">250 </em> g de Farines</li>
+                              <li><em class="liste">4 </em> oeuf :</li>
+                              <li><em class="liste">5 </em> Lait :</li>
+                              <li><em class="liste">1 </em> Levure :</li>
+                            </ul>  
+                        </div>
+                    </div>
+                </div>
+                   
+            </div>
+            <div  class="column has-text-left">
+
+                <h2 >Préparation </h2>  
+                <p >Etape 1 </p>
+
+            </div>
+
+        </div>
+    </section>   
+    <footer class="footer">
+        <div class="container">
+            <div class="content has-text-centered">
+                <p>
+                <strong>Copyright</strong> by <a href="https://servical-kevin.fr">SERVICAL Kévin</a>
+                
+                </p>
+            </div>
+        </div>
+    </footer>
+  </body
