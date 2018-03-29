@@ -1,32 +1,32 @@
 <?php
 
-class FormController extends CI_Controller {
+class FormController extends MY_Controller {
 
         public function index()
         {
                 $this->load->helper(array('form', 'url'));
 
                 $this->load->library('form_validation');
-
-                if ($this->form_validation->run() == FALSE)
-                {
-                        $this->load->view('recipe/form');
-                }
-                else
-                {
-                        $this->load->view('form');
-                }
+               
+                $query=$this->db->select('ingredient.name')->from('ingredient');
+                $result=$query->get()->result();
                 
-                $querry=$this->db->simple_query('select * from ingredient');
-                if ($querry)
+
+                $data =array(
+                        'ingredients'=>$result,
+                    );
+                    
+                if ($result)
                     {
-                            echo "Success!";
-                            echo $querry;
+                        echo "Success!";
+                       
                     }
-                    else
+                else
                     {
                             echo "Query failed!";
                     }
-                }
+                    
+           $this->renderView('recipe/form',$data); 
                     
         }
+}

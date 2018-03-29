@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table is-bordered">
 
 <?php 
 foreach ($ingredients as $ingredient)
@@ -7,11 +7,12 @@ foreach ($ingredients as $ingredient)
     
     foreach($ingredient as $attr){
         ?> 
-        <div>
+        <tr>
+
             <?php
         echo $attr; 
         ?>
-        </div>
+        </tr>
         <?php 
     }
     #var_dump($ingredient);

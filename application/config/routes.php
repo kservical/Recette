@@ -56,3 +56,4 @@ $route['recipe'] = 'RecipeController';
 $route['recipe/(:num)'] = 'RecipeController/recipe/$1';
 $route['ingredients'] = 'IngredientController';
 $route['form']= 'FormController';
+$route['insert']= 'AddController';
